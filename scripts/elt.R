@@ -12,11 +12,10 @@ fn_out <- '/Volumes/Extreme SSD/cricket/clean_data/results.parquet'
 
 fn_list <- list.files(path = dir, full.names = TRUE, pattern = '\\.json$')
 i_range <- seq(1, length(fn_list))
-
 # collected_team_type <- rep(NA_character_, length(fn_list))
 CollectedResults <- data.frame()
 for (i in i_range){
-	print(sprintf('%i of %i', i, length(fn_list)))
+	print(sprintf('%i of %i: %.3f', i, length(fn_list), i / length(fn_list)))
 	
 	fn <- fn_list[i]
 	Data <- jsonlite::read_json(fn)
