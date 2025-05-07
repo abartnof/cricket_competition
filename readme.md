@@ -392,7 +392,7 @@ chisq.test(EventSD$event_sd, EventSD$match_type, simulate.p.value = TRUE)
     ##  replicates)
     ## 
     ## data:  EventSD$event_sd and EventSD$match_type
-    ## X-squared = 360.75, df = NA, p-value = 0.3123
+    ## X-squared = 360.75, df = NA, p-value = 0.3248
 
 On the other hand, a comparison of multi-level models which controls for
 year, gender, country, and event indicates that match type is highly
@@ -457,28 +457,28 @@ chisq.test(EventSD$event_sd, factor(EventSD$match_type), simulate.p.value = TRUE
     ##  replicates)
     ## 
     ## data:  EventSD$event_sd and factor(EventSD$match_type)
-    ## X-squared = 360.75, df = NA, p-value = 0.3318
+    ## X-squared = 360.75, df = NA, p-value = 0.3098
 
 But once again, when the multi-level model controls for year, gender,
 and event, country becomes highly significant!
 
 ``` r
-mod_type1 <- lmer(data = EventSD, formula = event_sd ~ year + gender + country + match_type + (1|event_name))
+mod_country1 <- lmer(data = EventSD, formula = event_sd ~ year + gender + country + match_type + (1|event_name))
 
-mod_type0 <- lmer(data = EventSD, formula = event_sd ~ year + gender + country + (1|event_name))
+mod_country0 <- lmer(data = EventSD, formula = event_sd ~ year + gender + match_type + (1|event_name))
 
-anova(mod_type1, mod_type0)
+anova(mod_country1, mod_country0)
 ```
 
     ## refitting model(s) with ML (instead of REML)
 
     ## Data: EventSD
     ## Models:
-    ## mod_type0: event_sd ~ year + gender + country + (1 | event_name)
-    ## mod_type1: event_sd ~ year + gender + country + match_type + (1 | event_name)
-    ##           npar     AIC    BIC  logLik deviance  Chisq Df Pr(>Chisq)   
-    ## mod_type0   14 1004.53 1052.4 -488.26   976.53                        
-    ## mod_type1   16  996.08 1050.8 -482.04   964.08 12.449  2    0.00198 **
+    ## mod_country0: event_sd ~ year + gender + match_type + (1 | event_name)
+    ## mod_country1: event_sd ~ year + gender + country + match_type + (1 | event_name)
+    ##              npar    AIC    BIC  logLik deviance  Chisq Df Pr(>Chisq)  
+    ## mod_country0    7 997.25 1021.2 -491.63   983.25                       
+    ## mod_country1   16 996.08 1050.8 -482.04   964.08 19.175  9    0.02374 *
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
