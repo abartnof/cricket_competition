@@ -4,8 +4,8 @@ Andrew Bartnof
 2025
 
 I prefer sports when the teams are evenly-matched, and I like cricket,
-so I made this quick analysis to answer the question: which cricket
-competitions are the most evenly-matched?
+so I made this quick analysis to answer the question: which kinds of
+domestic cricket competitions are the most evenly-matched?
 
 ``` r
 library(tidyverse)
@@ -40,7 +40,7 @@ Imagine two sports leagues.
 
 This league has four teams (Wikipedia contributors 2025b):
 
-- The Flies,
+- The Flies
 
 - The Spiders
 
@@ -79,9 +79,10 @@ of these games will also be a tie; however, in this league, each team is
 equally likely to win.
 
 In the Equal Odds League, any team is equally like to get a tie (1/3 of
-the games), to win (1/3 of the games), and to lose (1/3 of the games).
+the games), to win (1/3 of the games), or to lose (1/3 of the games).
 
-We can run a quick simulation of these two leagues’ outcomes:
+I’ve run a quick simulation of these two leagues. Here’s each team’s
+outcome:
 
 ``` r
 Counterfactuals %>%
@@ -96,12 +97,15 @@ theme(axis.ticks.x = element_blank())
 
 ![](readme_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
 
-Each team in the Equal Odds League could win any game, and we see a bit
-of natural variance between them.  In contrast, you can see the
-hierarchy that’s baked into the Hierarchical League; The Flies have
-never won a game, and The Cats have never lost one. We’d like to
-calculate the leagues’ standings. Let’s give a team 3 points for a win,
-1 for a tie, and 0 for a loss.  Now, our standings look like this:
+Each team in the Equal Odds League could win any game, and their
+outcomes look the same, albeit with a bit of random variance. In
+contrast, you can see the hierarchy that’s baked into the Hierarchical
+League; The Flies have never won a game, and The Cats have never lost
+one.
+
+Next, I’d like to calculate the leagues’ standings. Let’s give a team 3
+points for a win, 1 for a tie, and 0 for a loss.  Now, our standings
+look like this:
 
 ``` r
 CteCounterfactualCount <-
@@ -180,20 +184,21 @@ and The Cats are really far from the mean. The distance between an
 individual team’s score and the league’s mean score is what we’re
 looking at here.
 
-**Deviance:** For any team, figure out the difference between the team’s
-final score, and the league mean score. Square it. (We don’t really care
-if something is way below the mean or way above.  All we care about is
-whether it’s far from the mean in any direction. So for example,
-squaring -10 and 10 gives us 100 in both cases— problem solved.)
+- **Deviance:** For any team, figure out the difference between the
+  team’s final score, and the league mean score. Square it. (We don’t
+  really care if something is way below the mean or way above. All we
+  care about is whether it’s far from the mean in any direction. So for
+  example, squaring -10 and 10 gives us 100 in both cases— problem
+  solved.)
 
-**Variance:** Take all four teams in either league. If you calculate
-each team’s deviance, and then find the mean deviance, congratulations
-because you’ve just discovered the league’s variance.
+- **Variance:** Take all four teams in either league. If you calculate
+  each team’s deviance, and then find the mean deviance, congratulations
+  because you’ve just discovered the league’s variance.
 
-**Standard Deviation:** Variance is a great measure of dispersal, but
-remember that we had to square the values a few steps up, so our
-variance is distractingly high. Take the square-root of the variance,
-and now you have the standard deviation!
+- **Standard Deviation:** Variance is a great measure of dispersal, but
+  remember that we had to square the values a few steps up, so our
+  variance is distractingly high. Take the square-root of the variance,
+  and now you have the standard deviation!
 
 Remember how far The Cats and The Flies team scores were from the
 Hierarchical League’s mean score?  This means the Hierarchical League is
@@ -230,8 +235,8 @@ with some strong teams and some weak teams, we’ll see a pretty high
 standard deviation of scores. In a league where everyone is more-or-less
 evenly-matched, we’ll see a lower standard deviation of scores. I like
 exciting games where nobody knows who’s going to win— that’s why, all
-else being equal, I want to find leagues with relatively small standard
-deviation of scores.
+else being equal, I want to find leagues with a relatively small
+standard deviation of scores.
 
 ## Cricket
 
@@ -246,14 +251,15 @@ and it has been around since the 16th century (Wikipedia contributors
 is missing uniformly, and not in a way that biases our findings, then we
 can proceed!
 
-Variables we’re interested in:
+I’m interested in three variables. I want to see which of these seems to
+impact the competitiveness of a league
 
-- gender
+- Gender
 
-- match type: Cricket has 3 formats, which are represented here as MDM
+- Match type: Cricket has 3 formats, which are represented here as MDM
   (multi-day match); ODM (one-day match); and T20 (Twenty20).
 
-- country
+- Country
 
 ``` r
 # Calculate the total score per team, per year
@@ -299,7 +305,7 @@ head(EventSD)
 
 ### Gender
 
-First off: is women’s cricket more competitive than men’s? There are no
+First off, is women’s cricket more competitive than men’s? There are no
 women’s multi-day domestic leagues in the dataset, so let’s filter men’s
 multi-day matches out.
 
@@ -340,7 +346,7 @@ Let’s compare two multi-level models. In the first, the fixed effects
 are year, match type, country, and gender; the random effects are the
 events themselves. The second model omits gender.
 
-The answer is: no, the model with gender is not significantly better
+The answer is– no, the model with gender is not significantly better
 than our null model.
 
 ``` r
@@ -386,9 +392,9 @@ chisq.test(EventSD$event_sd, EventSD$match_type, simulate.p.value = TRUE)
     ##  replicates)
     ## 
     ## data:  EventSD$event_sd and EventSD$match_type
-    ## X-squared = 360.75, df = NA, p-value = 0.3318
+    ## X-squared = 360.75, df = NA, p-value = 0.3113
 
-On the other hand, a comparison of multi-level models which accounts for
+On the other hand, a comparison of multi-level models which controls for
 year, gender, country, and event indicates that match type is highly
 significant!
 
@@ -451,9 +457,9 @@ chisq.test(EventSD$event_sd, factor(EventSD$match_type), simulate.p.value = TRUE
     ##  replicates)
     ## 
     ## data:  EventSD$event_sd and factor(EventSD$match_type)
-    ## X-squared = 360.75, df = NA, p-value = 0.3178
+    ## X-squared = 360.75, df = NA, p-value = 0.3203
 
-But once again, when the multi-level model accounts for year, gender,
+But once again, when the multi-level model controls for year, gender,
 and event, country becomes highly significant!
 
 ``` r
@@ -478,14 +484,16 @@ anova(mod_type1, mod_type0)
 
 ### Conclusion
 
-If you want to watch a highly-competitive cricket competition, choose an
-Irish (or barring that, NZ or Oz) league– the longer the matches the
-better– and don’t worry about gender.
+If you want to watch a highly-competitive domestic cricket competition,
+choose an Irish (or barring that, NZ or Oz) league– the longer the
+matches, the better– and don’t worry about gender.
 
 ### Appendix: More Multi-Level Model Data
 
 ``` r
-summary(mod_type1)
+mod <- lmer(data = EventSD, formula = event_sd ~ year + gender + country + match_type + (1|event_name))
+
+summary(mod)
 ```
 
     ## Linear mixed model fit by REML ['lmerMod']
@@ -521,8 +529,13 @@ summary(mod_type1)
     ## match_typeODM               1.12431    1.02741   1.094
     ## match_typeT20               2.24829    0.77334   2.907
 
+    ## 
+    ## Correlation matrix not shown by default, as p = 14 > 12.
+    ## Use print(value, correlation=TRUE)  or
+    ##     vcov(value)        if you need it
+
 ``` r
-performance::icc(mod_type1)
+performance::icc(mod)
 ```
 
     ## # Intraclass Correlation Coefficient
