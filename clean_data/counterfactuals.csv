@@ -1,0 +1,193 @@
+name_of_scenario,team,team_outcome,team_score
+Hierarchical,The Flies,Loss,0
+Hierarchical,The Spiders,Win,3
+Hierarchical,The Flies,Loss,0
+Hierarchical,The Birds,Win,3
+Hierarchical,The Flies,Loss,0
+Hierarchical,The Cats,Win,3
+Hierarchical,The Spiders,Win,3
+Hierarchical,The Flies,Loss,0
+Hierarchical,The Spiders,Loss,0
+Hierarchical,The Birds,Win,3
+Hierarchical,The Spiders,Tie,1
+Hierarchical,The Cats,Tie,1
+Hierarchical,The Birds,Win,3
+Hierarchical,The Flies,Loss,0
+Hierarchical,The Birds,Tie,1
+Hierarchical,The Spiders,Tie,1
+Hierarchical,The Birds,Loss,0
+Hierarchical,The Cats,Win,3
+Hierarchical,The Cats,Win,3
+Hierarchical,The Flies,Loss,0
+Hierarchical,The Cats,Tie,1
+Hierarchical,The Spiders,Tie,1
+Hierarchical,The Cats,Win,3
+Hierarchical,The Birds,Loss,0
+Hierarchical,The Flies,Tie,1
+Hierarchical,The Spiders,Tie,1
+Hierarchical,The Flies,Loss,0
+Hierarchical,The Birds,Win,3
+Hierarchical,The Flies,Loss,0
+Hierarchical,The Cats,Win,3
+Hierarchical,The Spiders,Tie,1
+Hierarchical,The Flies,Tie,1
+Hierarchical,The Spiders,Tie,1
+Hierarchical,The Birds,Tie,1
+Hierarchical,The Spiders,Tie,1
+Hierarchical,The Cats,Tie,1
+Hierarchical,The Birds,Win,3
+Hierarchical,The Flies,Loss,0
+Hierarchical,The Birds,Win,3
+Hierarchical,The Spiders,Loss,0
+Hierarchical,The Birds,Loss,0
+Hierarchical,The Cats,Win,3
+Hierarchical,The Cats,Tie,1
+Hierarchical,The Flies,Tie,1
+Hierarchical,The Cats,Win,3
+Hierarchical,The Spiders,Loss,0
+Hierarchical,The Cats,Win,3
+Hierarchical,The Birds,Loss,0
+Hierarchical,The Flies,Tie,1
+Hierarchical,The Spiders,Tie,1
+Hierarchical,The Flies,Loss,0
+Hierarchical,The Birds,Win,3
+Hierarchical,The Flies,Loss,0
+Hierarchical,The Cats,Win,3
+Hierarchical,The Spiders,Tie,1
+Hierarchical,The Flies,Tie,1
+Hierarchical,The Spiders,Loss,0
+Hierarchical,The Birds,Win,3
+Hierarchical,The Spiders,Loss,0
+Hierarchical,The Cats,Win,3
+Hierarchical,The Birds,Win,3
+Hierarchical,The Flies,Loss,0
+Hierarchical,The Birds,Win,3
+Hierarchical,The Spiders,Loss,0
+Hierarchical,The Birds,Loss,0
+Hierarchical,The Cats,Win,3
+Hierarchical,The Cats,Win,3
+Hierarchical,The Flies,Loss,0
+Hierarchical,The Cats,Win,3
+Hierarchical,The Spiders,Loss,0
+Hierarchical,The Cats,Tie,1
+Hierarchical,The Birds,Tie,1
+Hierarchical,The Flies,Loss,0
+Hierarchical,The Spiders,Win,3
+Hierarchical,The Flies,Loss,0
+Hierarchical,The Birds,Win,3
+Hierarchical,The Flies,Loss,0
+Hierarchical,The Cats,Win,3
+Hierarchical,The Spiders,Win,3
+Hierarchical,The Flies,Loss,0
+Hierarchical,The Spiders,Tie,1
+Hierarchical,The Birds,Tie,1
+Hierarchical,The Spiders,Loss,0
+Hierarchical,The Cats,Win,3
+Hierarchical,The Birds,Tie,1
+Hierarchical,The Flies,Tie,1
+Hierarchical,The Birds,Win,3
+Hierarchical,The Spiders,Loss,0
+Hierarchical,The Birds,Loss,0
+Hierarchical,The Cats,Win,3
+Hierarchical,The Cats,Win,3
+Hierarchical,The Flies,Loss,0
+Hierarchical,The Cats,Tie,1
+Hierarchical,The Spiders,Tie,1
+Hierarchical,The Cats,Win,3
+Hierarchical,The Birds,Loss,0
+Equal Odds,The Goats,Loss,0
+Equal Odds,The Horses,Win,3
+Equal Odds,The Goats,Loss,0
+Equal Odds,The Lambs,Win,3
+Equal Odds,The Goats,Tie,1
+Equal Odds,The Llamas,Tie,1
+Equal Odds,The Horses,Loss,0
+Equal Odds,The Goats,Win,3
+Equal Odds,The Horses,Tie,1
+Equal Odds,The Lambs,Tie,1
+Equal Odds,The Horses,Loss,0
+Equal Odds,The Llamas,Win,3
+Equal Odds,The Lambs,Loss,0
+Equal Odds,The Goats,Win,3
+Equal Odds,The Lambs,Win,3
+Equal Odds,The Horses,Loss,0
+Equal Odds,The Lambs,Tie,1
+Equal Odds,The Llamas,Tie,1
+Equal Odds,The Llamas,Loss,0
+Equal Odds,The Goats,Win,3
+Equal Odds,The Llamas,Win,3
+Equal Odds,The Horses,Loss,0
+Equal Odds,The Llamas,Loss,0
+Equal Odds,The Lambs,Win,3
+Equal Odds,The Goats,Tie,1
+Equal Odds,The Horses,Tie,1
+Equal Odds,The Goats,Win,3
+Equal Odds,The Lambs,Loss,0
+Equal Odds,The Goats,Tie,1
+Equal Odds,The Llamas,Tie,1
+Equal Odds,The Horses,Win,3
+Equal Odds,The Goats,Loss,0
+Equal Odds,The Horses,Tie,1
+Equal Odds,The Lambs,Tie,1
+Equal Odds,The Horses,Tie,1
+Equal Odds,The Llamas,Tie,1
+Equal Odds,The Lambs,Win,3
+Equal Odds,The Goats,Loss,0
+Equal Odds,The Lambs,Tie,1
+Equal Odds,The Horses,Tie,1
+Equal Odds,The Lambs,Win,3
+Equal Odds,The Llamas,Loss,0
+Equal Odds,The Llamas,Win,3
+Equal Odds,The Goats,Loss,0
+Equal Odds,The Llamas,Win,3
+Equal Odds,The Horses,Loss,0
+Equal Odds,The Llamas,Tie,1
+Equal Odds,The Lambs,Tie,1
+Equal Odds,The Goats,Win,3
+Equal Odds,The Horses,Loss,0
+Equal Odds,The Goats,Tie,1
+Equal Odds,The Lambs,Tie,1
+Equal Odds,The Goats,Tie,1
+Equal Odds,The Llamas,Tie,1
+Equal Odds,The Horses,Tie,1
+Equal Odds,The Goats,Tie,1
+Equal Odds,The Horses,Tie,1
+Equal Odds,The Lambs,Tie,1
+Equal Odds,The Horses,Tie,1
+Equal Odds,The Llamas,Tie,1
+Equal Odds,The Lambs,Loss,0
+Equal Odds,The Goats,Win,3
+Equal Odds,The Lambs,Win,3
+Equal Odds,The Horses,Loss,0
+Equal Odds,The Lambs,Loss,0
+Equal Odds,The Llamas,Win,3
+Equal Odds,The Llamas,Tie,1
+Equal Odds,The Goats,Tie,1
+Equal Odds,The Llamas,Win,3
+Equal Odds,The Horses,Loss,0
+Equal Odds,The Llamas,Win,3
+Equal Odds,The Lambs,Loss,0
+Equal Odds,The Goats,Loss,0
+Equal Odds,The Horses,Win,3
+Equal Odds,The Goats,Tie,1
+Equal Odds,The Lambs,Tie,1
+Equal Odds,The Goats,Tie,1
+Equal Odds,The Llamas,Tie,1
+Equal Odds,The Horses,Loss,0
+Equal Odds,The Goats,Win,3
+Equal Odds,The Horses,Win,3
+Equal Odds,The Lambs,Loss,0
+Equal Odds,The Horses,Loss,0
+Equal Odds,The Llamas,Win,3
+Equal Odds,The Lambs,Loss,0
+Equal Odds,The Goats,Win,3
+Equal Odds,The Lambs,Loss,0
+Equal Odds,The Horses,Win,3
+Equal Odds,The Lambs,Loss,0
+Equal Odds,The Llamas,Win,3
+Equal Odds,The Llamas,Loss,0
+Equal Odds,The Goats,Win,3
+Equal Odds,The Llamas,Loss,0
+Equal Odds,The Horses,Win,3
+Equal Odds,The Llamas,Tie,1
+Equal Odds,The Lambs,Tie,1
