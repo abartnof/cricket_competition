@@ -392,7 +392,7 @@ chisq.test(EventSD$event_sd, EventSD$match_type, simulate.p.value = TRUE)
     ##  replicates)
     ## 
     ## data:  EventSD$event_sd and EventSD$match_type
-    ## X-squared = 360.75, df = NA, p-value = 0.3113
+    ## X-squared = 360.75, df = NA, p-value = 0.3123
 
 On the other hand, a comparison of multi-level models which controls for
 year, gender, country, and event indicates that match type is highly
@@ -445,8 +445,8 @@ Ireland, New Zealand, and Australia are the only countries whose median
 standard deviation of scores is under the overall median, which is to
 say, they are the ones with the most competitive leagues.
 
-A chi-squared test indicates that country does not a significant impact
-on the standard deviation of scores.
+A chi-squared test indicates that country does not have a significant
+impact on the standard deviation of scores.
 
 ``` r
 chisq.test(EventSD$event_sd, factor(EventSD$match_type), simulate.p.value = TRUE)
@@ -457,7 +457,7 @@ chisq.test(EventSD$event_sd, factor(EventSD$match_type), simulate.p.value = TRUE
     ##  replicates)
     ## 
     ## data:  EventSD$event_sd and factor(EventSD$match_type)
-    ## X-squared = 360.75, df = NA, p-value = 0.3203
+    ## X-squared = 360.75, df = NA, p-value = 0.3318
 
 But once again, when the multi-level model controls for year, gender,
 and event, country becomes highly significant!

@@ -332,7 +332,7 @@ EventSD %>%
 
 Ireland, New Zealand, and Australia are the only countries whose median standard deviation of scores is under the overall median, which is to say, they are the ones with the most competitive leagues.
 
-A chi-squared test indicates that country does not a significant impact on the standard deviation of scores.
+A chi-squared test indicates that country does not have a significant impact on the standard deviation of scores.
 
 ```{r}
 chisq.test(EventSD$event_sd, factor(EventSD$match_type), simulate.p.value = TRUE)
