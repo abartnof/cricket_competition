@@ -392,7 +392,7 @@ chisq.test(EventSD$event_sd, EventSD$match_type, simulate.p.value = TRUE)
     ##  replicates)
     ## 
     ## data:  EventSD$event_sd and EventSD$match_type
-    ## X-squared = 360.75, df = NA, p-value = 0.3098
+    ## X-squared = 360.75, df = NA, p-value = 0.3163
 
 On the other hand, a comparison of multi-level models which controls for
 year, gender, country, and event indicates that match type is highly
@@ -457,10 +457,10 @@ chisq.test(EventSD$event_sd, factor(EventSD$country), simulate.p.value = TRUE)
     ##  replicates)
     ## 
     ## data:  EventSD$event_sd and factor(EventSD$country)
-    ## X-squared = 1648.5, df = NA, p-value = 0.05297
+    ## X-squared = 1648.5, df = NA, p-value = 0.06797
 
 But once again, when the multi-level model controls for year, gender,
-and event, country becomes highly significant!
+and event, country becomes significant!
 
 ``` r
 mod_country1 <- lmer(data = EventSD, formula = event_sd ~ year + gender + country + match_type + (1|event_name))

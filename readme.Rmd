@@ -338,7 +338,7 @@ A chi-squared test indicates that country does not have a significant impact on 
 chisq.test(EventSD$event_sd, factor(EventSD$country), simulate.p.value = TRUE)
 ```
 
-But once again, when the multi-level model controls for year, gender, and event, country becomes highly significant!
+But once again, when the multi-level model controls for year, gender, and event, country becomes significant!
 
 ```{r}
 mod_country1 <- lmer(data = EventSD, formula = event_sd ~ year + gender + country + match_type + (1|event_name))
