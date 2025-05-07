@@ -335,7 +335,7 @@ Ireland, New Zealand, and Australia are the only countries whose median standard
 A chi-squared test indicates that country does not have a significant impact on the standard deviation of scores.
 
 ```{r}
-chisq.test(EventSD$event_sd, factor(EventSD$match_type), simulate.p.value = TRUE)
+chisq.test(EventSD$event_sd, factor(EventSD$country), simulate.p.value = TRUE)
 ```
 
 But once again, when the multi-level model controls for year, gender, and event, country becomes highly significant!

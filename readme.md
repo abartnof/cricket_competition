@@ -392,7 +392,7 @@ chisq.test(EventSD$event_sd, EventSD$match_type, simulate.p.value = TRUE)
     ##  replicates)
     ## 
     ## data:  EventSD$event_sd and EventSD$match_type
-    ## X-squared = 360.75, df = NA, p-value = 0.3248
+    ## X-squared = 360.75, df = NA, p-value = 0.3098
 
 On the other hand, a comparison of multi-level models which controls for
 year, gender, country, and event indicates that match type is highly
@@ -449,15 +449,15 @@ A chi-squared test indicates that country does not have a significant
 impact on the standard deviation of scores.
 
 ``` r
-chisq.test(EventSD$event_sd, factor(EventSD$match_type), simulate.p.value = TRUE)
+chisq.test(EventSD$event_sd, factor(EventSD$country), simulate.p.value = TRUE)
 ```
 
     ## 
     ##  Pearson's Chi-squared test with simulated p-value (based on 2000
     ##  replicates)
     ## 
-    ## data:  EventSD$event_sd and factor(EventSD$match_type)
-    ## X-squared = 360.75, df = NA, p-value = 0.3098
+    ## data:  EventSD$event_sd and factor(EventSD$country)
+    ## X-squared = 1648.5, df = NA, p-value = 0.05297
 
 But once again, when the multi-level model controls for year, gender,
 and event, country becomes highly significant!
