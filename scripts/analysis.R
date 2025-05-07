@@ -152,36 +152,27 @@ CteCounterfactualCount %>%
 
 # Graph each team's scores v the mean	
 
-CounterfactualTeamwiseScores <-
-	bind_rows(OutcomeCounterfactual1, OutcomeCounterfactual2) %>%
-	mutate(
-		team = ordered(team, c(teams_scenario1, teams_scenario2))
-	) %>%
-	group_by(name_of_scenario, team) %>%
-	summarize(team_subtotal = sum(team_score)) %>%
-	ungroup
-
-
-CounterfactualMeanScores <-
-	CounterfactualTeamwiseScores %>%
+CteScenarioMeans <-
+	CteCounterfactualPoints %>%
 	group_by(name_of_scenario) %>%
-	summarize(mean_score = mean(team_subtotal)) %>%
+	summarize(mean = mean(Points)) %>%
 	ungroup
 
-CounterfactualTeamwiseScores %>%
-	left_join(CounterfactualMeanScores) %>%
-	mutate(color = team_subtotal >= mean_score) %>%
-	ggplot(aes(x = team, y = team_subtotal)) +
-	geom_hline(data = CounterfactualMeanScores, aes(yintercept = mean_score), linetype = 'dashed') +
-	geom_point(aes(y = team_subtotal, color = color), size = 3) +
-	facet_wrap(~name_of_scenario, scales = 'free_x') +
-	labs(x = 'Team', y = 'Team final score', title = 'Comparison of each team\'s score', subtitle = 'League mean scores are indicated with the horizontal dotted lines') +
+CteCounterfactualPoints %>%
+	left_join(CteScenarioMeans, by = 'name_of_scenario') %>%
+	mutate(is_greater_than_mean = Points > mean) %>%
+	ggplot(aes(x = team, y = Points)) +
+	geom_hline(aes(yintercept = mean), linetype = 'dashed') +
+	geom_point(aes(color = is_greater_than_mean), size = 3) +
+	facet_wrap(~name_of_scenario, scales='free_x') +
+	labs(x = 'Team', y = 'Team final score', title = 'Comparison of each team\'s score', subtitle = 'League mean scores are indicated with the horizontal dashed lines') +
 	theme(
 		legend.position = 'none',
 		axis.ticks.x = element_blank(),
 		text = element_text(family = 'serif')
 	)
 
+# Standard deviations
 CounterfactualTeamwiseScores %>%
 	group_by(name_of_scenario) %>%
 	summarize(sd = sd(team_subtotal)) %>%
@@ -194,7 +185,7 @@ CounterfactualTeamwiseScores %>%
 	) +
 	labs(x = 'League', y = 'Standard deviation of scores', title = str_wrap('Standard deviation of scores in each league'))
 	
-	
+CteCounterfactualPoints
 	
 	
 	
