@@ -392,7 +392,7 @@ chisq.test(EventSD$event_sd, EventSD$match_type, simulate.p.value = TRUE)
     ##  replicates)
     ## 
     ## data:  EventSD$event_sd and EventSD$match_type
-    ## X-squared = 360.75, df = NA, p-value = 0.3163
+    ## X-squared = 360.75, df = NA, p-value = 0.3003
 
 On the other hand, a comparison of multi-level models which controls for
 year, gender, country, and event indicates that match type is highly
@@ -457,7 +457,7 @@ chisq.test(EventSD$event_sd, factor(EventSD$country), simulate.p.value = TRUE)
     ##  replicates)
     ## 
     ## data:  EventSD$event_sd and factor(EventSD$country)
-    ## X-squared = 1648.5, df = NA, p-value = 0.06797
+    ## X-squared = 1648.5, df = NA, p-value = 0.06097
 
 But once again, when the multi-level model controls for year, gender,
 and event, country becomes significant!
@@ -487,6 +487,30 @@ anova(mod_country1, mod_country0)
 If you want to watch a highly-competitive domestic cricket competition,
 choose an Irish (or barring that, NZ or Oz) league– the longer the
 matches, the better– and don’t worry about gender.
+
+### Future Questions
+
+In the future, I think it would be fun to check out a few different
+facets of ‘competitiveness’ (thanks to <https://github.com/raskutti> for
+his thoughts on this):
+
+- **Expected performance based on national performance**: Using the
+  above metrics, a league in India might look about as competitive as a
+  league for novices in the USA, but obviously, the Indian games will be
+  hard-won by world-class athletes, and the American novice games will
+  not. That’s the limitation of defining competitiveness as a league’s
+  standard deviation of scores; it doesn’t reflect the skill level that
+  is expected within a nation’s domestic leagues. It would be good to
+  dig into this, and add a second metric to this analysis, which rewards
+  overall expected level of ability.
+
+- **Predictability of the winner**: How often do we see the same team
+  win the trophy in a competition? Leagues where the same team always
+  wins are kind of boring, because they’re predictable.
+
+- **Competitiveness as a per-game phenomenon**: Regardless of a league’s
+  overall distribution of scores, how often does a given team compete in
+  a game where the opponents present a good challenge?
 
 ### Appendix: More Multi-Level Model Data
 
